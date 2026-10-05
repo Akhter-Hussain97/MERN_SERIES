@@ -1,5 +1,6 @@
 const mongoose=require("mongoose");
 const bcrypt=require("bcrypt");
+const jwt=require("jsonwebtoken");
 const UserScheme=mongoose.Schema({
     username:{
         type : String,
@@ -37,6 +38,23 @@ UserScheme.pre("save", async function(next){
     next(err);
   }
 });
+
+// json web token
+UserScheme.methods.generateToken= async function(){
+    try{
+        return jwt.sign({
+            userId:this._id.toString(),
+            email:this.email,
+            isadmin:this.isadmin
+    }, process.env.SERECT_KEY),
+    {
+        expiresIn:"15d"
+    };
+    }
+    catch(err){
+        console.log(err);
+    }
+};
 
 const User=mongoose.model("User",UserScheme);
 module.exports=User;
