@@ -9,6 +9,7 @@ const home= async(req, res)=>{
 };
 const register= async(req, res)=>{
     try{
+        console.log(req.body);
         const {username, email, phone, password, isadmin}=req.body;
          const UserExist=await User.findOne({email});
          if(UserExist){
@@ -45,7 +46,8 @@ const register= async(req, res)=>{
 
       }
       catch(err){
-           res.status(500).json("internal server error");
+          // res.status(500).json("internal server error");
+          next(err);
       }
     
   };

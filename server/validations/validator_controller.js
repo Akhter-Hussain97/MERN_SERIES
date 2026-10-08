@@ -8,7 +8,7 @@ const {z}=require("zod");
         email:z.string({required_error:"Email is required"}).trim()
         .email({message:"Invalid email format"})
          .min(3, {message:"Email must be at least 3 characters long"})
-         .max(20, {message:"Email must be at most 30 characters long"}),
+         .max(40, {message:"Email must be at most 30 characters long"}),
 
         phone:z.string({required_error:"Phone is required"}).trim()
         .min(10, {message:"Phone must be at least 10 characters long"})
