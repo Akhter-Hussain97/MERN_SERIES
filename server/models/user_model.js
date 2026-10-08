@@ -4,23 +4,23 @@ const jwt=require("jsonwebtoken");
 const UserScheme=mongoose.Schema({
     username:{
         type : String,
-        reuired:true
+        required:true
     },
     email:{
         type : String,
-        reuired:true
+        required:true
     }, 
     phone:{
         type : String,
-        reuired:true
+        required:true
     },
     password:{
         type : String,
-        reuired:true
+        required:true
     },
     isadmin:{
         type : Boolean,
-        reuired:true
+        required:true
     }
 });
 
