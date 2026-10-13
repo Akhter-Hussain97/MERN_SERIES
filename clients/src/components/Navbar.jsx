@@ -8,12 +8,14 @@ const Navbar = () => {
       </div>
       <nav className="navbar">
         <div className="links">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
-          <NavLink to="/service">Services</NavLink>   {/* 3. Fixed: Changed href to to */}
-          <NavLink to="/register">Register</NavLink> {/* 3. Fixed: Changed href to to */}
-          <NavLink to="/login">Login</NavLink>       {/* 3. Fixed: Changed href to to */}
+        <ul>
+          <li><NavLink to="/">Home</NavLink></li>
+          <li><NavLink to="/about">About</NavLink></li>
+          <li><NavLink to="/contact">Contact</NavLink></li>
+          <li><NavLink to="/service">Services</NavLink></li>  {/* 3. Fixed: Changed href to to */}
+          <li><NavLink to="/register">Register</NavLink></li> {/* 3. Fixed: Changed href to to */}
+          <li><NavLink to="/login">Login</NavLink></li>
+          </ul>       {/* 3. Fixed: Changed href to to */}
         </div>
       </nav>
     </div>
