@@ -1,111 +1,214 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+/* ===== Home page ===== */
+.home-container,
+.home-middle,
+.home-footer {
+  --home-bg: #ffffff;
+  --home-bg-alt: #f5f8ff;
+  --home-text: #111827;
+  --home-muted: #4b5563;
+  --home-accent: #2563eb;
+  --home-accent-dark: #1d4ed8;
+  --home-dark: #0f172a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+main {
+  overflow-x: hidden;
 }
 
-body {
-  margin: 0;
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
+/* ----- Hero / content sections ----- */
+.home-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(32px, 6vw, 80px);
+  max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
+  padding: clamp(48px, 8vw, 96px) clamp(16px, 5vw, 48px);
+}
+
+.left-content .heading h3 {
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--home-accent);
+}
+
+.left-content .heading h1 {
+  margin: 0 0 20px;
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--home-text);
+}
+
+.home-para,
+#home-para {
+  margin: 0 0 32px;
+  max-width: 540px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--home-muted);
+}
+
+/* ----- Buttons (scoped so they don't affect the Register page .btn) ----- */
+.two-btn {
   display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
+.two-btn .btn {
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--home-accent);
+  border: 2px solid var(--home-accent);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.two-btn .btn:hover {
+  background: var(--home-accent-dark);
+  border-color: var(--home-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+/* Second button = outline style */
+.two-btn .btn:nth-child(2) {
+  color: var(--home-accent);
+  background: transparent;
+}
+
+.two-btn .btn:nth-child(2):hover {
+  color: #fff;
+  background: var(--home-accent);
+  border-color: var(--home-accent);
+}
+
+.two-btn .btn:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.4);
+  outline-offset: 2px;
+}
+
+/* ----- Images ----- */
+.right-img {
+  display: flex;
+  justify-content: center;
+}
+
+.right-img img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(15, 23, 42, 0.12));
+}
+
+/* ----- Stats strip ----- */
+.home-middle {
+  padding: 40px clamp(16px, 5vw, 48px);
+  background: var(--home-dark);
+}
+
+.home-middle ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.home-middle li {
+  padding: 8px 12px;
+  font-size: 1rem;
   font-weight: 500;
-  color: var(--text-h);
+  color: #cbd5e1;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+.home-middle li:last-child {
+  border-right: none;
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+
+/* ----- Second section (call to action) ----- */
+.home-lit {
+  background: var(--home-bg-alt);
 }
-p {
+
+/* ----- Footer ----- */
+.home-footer {
+  padding: 24px 16px;
+  text-align: center;
+  background: var(--home-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.home-footer h4 {
   margin: 0;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #94a3b8;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .home-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .home-para,
+  #home-para {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .two-btn {
+    justify-content: center;
+  }
+
+  /* Keep text above image on mobile in the second section too */
+  .home-lit .left-content {
+    order: 1;
+  }
+  .home-lit .right-img {
+    order: 2;
+  }
+
+  .home-middle ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-middle li:nth-child(2) {
+    border-right: none;
+  }
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+@media (max-width: 480px) {
+  .home-middle ul {
+    grid-template-columns: 1fr;
+  }
+
+  .home-middle li {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .home-middle li:last-child {
+    border-bottom: none;
+  }
+
+  .two-btn .btn {
+    width: 100%;
+  }
 }
