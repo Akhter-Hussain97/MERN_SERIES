@@ -1,5 +1,6 @@
 import admin from "../assets/images/admin.png";
 import ready from "../assets/images/ready.png";
+import Analytics from "../components/Analytics";
 import "../index.css";
 const Home=()=>{
     return(
@@ -24,14 +25,7 @@ const Home=()=>{
               <img src={admin} alt="clients" />
             </div>
           </div>
-            <div className="home-middle">
-                <ul>
-                <li>50+ Registered Companies</li>
-                <li>10,000+ Happy Clients</li>
-                <li>500+ well known Developers</li>
-                <li>24/7 Services</li>
-                </ul>
-            </div>
+            <Analytics/>
             <div className="home-lit">
                 <div className="home-container">
                 <div className="right-img">

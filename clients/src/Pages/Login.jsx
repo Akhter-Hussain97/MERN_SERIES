@@ -1,5 +1,6 @@
 import logo1 from "../assets/images/logo1.png";
 import { useState } from "react";
+import "../index.css";
 const Login=()=>{
     const [user, setUser] = useState({
       email: "",
@@ -18,7 +19,7 @@ const Login=()=>{
     return(
     <section>
         <main>
-          <div className="containter grid grid-cols-2">
+          <div className="register-containter grid">
           <div className="left-image">
           <img src={logo1} alt="fil the login"/>
           </div>

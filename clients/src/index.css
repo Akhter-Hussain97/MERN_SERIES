@@ -390,3 +390,392 @@ main {
     height: 320px;
   }
 }
+
+
+/*=================Register page=================*/
+.register-sec {
+  --r-bg-1: #eef4ff;
+  --r-bg-2: #f8fafc;
+  --r-card: #ffffff;
+  --r-text: #0f172a;
+  --r-muted: #64748b;
+  --r-border: #dbe3ee;
+  --r-accent: #2563eb;
+  --r-accent-dark: #1d4ed8;
+  --r-accent-soft: rgba(37, 99, 235, 0.14);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 72px); /* viewport minus navbar height */
+  padding: clamp(24px, 5vw, 64px) clamp(16px, 4vw, 48px);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.12), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(14, 165, 233, 0.12), transparent 40%),
+    linear-gradient(135deg, var(--r-bg-1), var(--r-bg-2));
+}
+
+.register-sec main {
+  width: 100%;
+  max-width: 1050px;
+}
+
+/* ----- Card: image on the left, form on the right ----- */
+.register-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+/* ----- Left: brand panel ----- */
+.left-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 4vw, 48px);
+  background: linear-gradient(160deg, #eaf1ff 0%, #dbe8ff 100%);
+}
+
+.left-image img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 24px rgba(37, 99, 235, 0.2));
+}
+
+/* ----- Right: form ----- */
+.right-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 5vw, 56px);
+}
+
+.right-form h1 {
+  margin: 0 0 6px;
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--r-text);
+}
+
+.right-form h1::after {
+  content: "Create your account to get started";
+  display: block;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--r-muted);
+}
+
+.right-form .form {
+  margin-top: 28px;
+}
+
+.right-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--r-text);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 13px 16px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--r-text);
+  background: #f8fafc;
+  border: 1.5px solid var(--r-border);
+  border-radius: 12px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.form-group input::placeholder {
+  color: #94a3b8;
+}
+
+.form-group input:hover {
+  border-color: #b8c4d6;
+}
+
+.form-group input:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--r-accent);
+  box-shadow: 0 0 0 4px var(--r-accent-soft);
+}
+
+/* Show red only after the user has typed something invalid */
+.form-group input:not(:placeholder-shown):invalid {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12);
+}
+
+/* ----- Submit button ----- */
+.right-form .btn {
+  margin-top: 8px;
+}
+
+.right-form .btn button {
+  width: 100%;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: linear-gradient(135deg, var(--r-accent), var(--r-accent-dark));
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.right-form .btn button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.38);
+  filter: brightness(1.05);
+}
+
+.right-form .btn button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+}
+
+.right-form .btn button:focus-visible {
+  outline: 3px solid var(--r-accent-soft);
+  outline-offset: 3px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 860px) {
+  .register-container {
+    grid-template-columns: 1fr;
+  }
+
+  .left-image {
+    padding: 28px 24px 12px;
+  }
+
+  .left-image img {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    border-radius: 18px;
+  }
+
+  .right-form {
+    padding: 24px 20px 28px;
+  }
+}
+
+/* ===== About page ===== */
+.about-sec {
+  --a-bg-1: #eef4ff;
+  --a-bg-2: #f8fafc;
+  --a-card: #ffffff;
+  --a-text: #0f172a;
+  --a-muted: #475569;
+  --a-border: #dbe3ee;
+  --a-accent: #2563eb;
+  --a-accent-dark: #1d4ed8;
+  --a-accent-soft: rgba(37, 99, 235, 0.14);
+
+  background:
+    radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.1), transparent 40%),
+    radial-gradient(circle at 90% 60%, rgba(14, 165, 233, 0.1), transparent 40%),
+    linear-gradient(135deg, var(--a-bg-1), var(--a-bg-2));
+}
+
+/* ----- Two columns: text left, image right ----- */
+.about-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: clamp(32px, 6vw, 80px);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 96px) clamp(16px, 5vw, 48px);
+}
+
+/* ----- Text content ----- */
+.hero-content h1 {
+  margin: 0 0 28px;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--a-text);
+}
+
+.hero-content h1::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin-top: 16px;
+  background: var(--a-accent);
+  border-radius: 2px;
+}
+
+/* Each paragraph becomes a card with an accent bar */
+.hero-content p {
+  margin: 0 0 14px;
+  padding: 14px 18px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--a-muted);
+  background: var(--a-card);
+  border-left: 4px solid var(--a-accent);
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-content p:hover {
+  transform: translateX(4px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+}
+
+/* If you wrap the labels in <strong> (Expertise, Reliability, ...) */
+.hero-content p strong {
+  color: var(--a-text);
+  font-weight: 700;
+}
+
+/* ----- Buttons ----- */
+.btn-about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.btn-about a {
+  text-decoration: none;
+}
+
+.btn-about .btn {
+  padding: 14px 28px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: linear-gradient(135deg, var(--a-accent), var(--a-accent-dark));
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-about .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.36);
+}
+
+/* Secondary (outline) button */
+.btn-about .sec-btn {
+  color: var(--a-accent);
+  background: transparent;
+  border-color: var(--a-accent);
+  box-shadow: none;
+}
+
+.btn-about .sec-btn:hover {
+  color: #fff;
+  background: var(--a-accent);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.3);
+}
+
+.btn-about .btn:focus-visible {
+  outline: 3px solid var(--a-accent-soft);
+  outline-offset: 3px;
+}
+
+/* ----- Image ----- */
+.about-img {
+  display: flex;
+  justify-content: center;
+}
+
+.about-img img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 36px rgba(37, 99, 235, 0.2));
+  animation: about-float 6s ease-in-out infinite;
+}
+
+@keyframes about-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-img img { animation: none; }
+  .hero-content p { transition: none; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Image first on mobile, like a banner */
+  .about-img {
+    order: -1;
+  }
+
+  .about-img img {
+    max-width: 320px;
+  }
+
+  .hero-content h1 {
+    text-align: center;
+  }
+
+  .hero-content h1::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-about {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-about .btn {
+    width: 100%;
+  }
+
+  .btn-about a {
+    width: 100%;
+  }
+}

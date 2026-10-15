@@ -7,6 +7,7 @@ import Contact from "./pages/Contact";
 import Service from "./pages/Service";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Errorbug from "./pages/Errorbug";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -20,11 +21,11 @@ function App() {
         <Route path="/service" element={<Service />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="*" element={<Errorbug />}/>
       </Routes>
     </BrowserRouter>
   );
 }
-
 export default App;
 
 

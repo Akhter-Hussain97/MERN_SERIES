@@ -1,5 +1,6 @@
 import logo from "../assets/images/logo.png";
 import { useState } from "react";
+import "../index.css";
 const Register = () => {
     const [user, setUser] = useState({
       username: "",
@@ -20,7 +21,7 @@ const Register = () => {
   return (
    <section>
     <main>
-      <div className="containter grid grid-cols-2">
+      <div className="register-containter">
       <div className="left-image">
       <img src={logo} alt="clients" />
       </div>
@@ -53,7 +54,6 @@ const Register = () => {
       </div>
     </main>
    </section>
-
   );
 };
 
