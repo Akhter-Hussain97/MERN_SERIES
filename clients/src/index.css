@@ -391,205 +391,6 @@ main {
   }
 }
 
-
-/*=================Register page=================*/
-.register-sec {
-  --r-bg-1: #eef4ff;
-  --r-bg-2: #f8fafc;
-  --r-card: #ffffff;
-  --r-text: #0f172a;
-  --r-muted: #64748b;
-  --r-border: #dbe3ee;
-  --r-accent: #2563eb;
-  --r-accent-dark: #1d4ed8;
-  --r-accent-soft: rgba(37, 99, 235, 0.14);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 72px); /* viewport minus navbar height */
-  padding: clamp(24px, 5vw, 64px) clamp(16px, 4vw, 48px);
-  background:
-    radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.12), transparent 40%),
-    radial-gradient(circle at 85% 80%, rgba(14, 165, 233, 0.12), transparent 40%),
-    linear-gradient(135deg, var(--r-bg-1), var(--r-bg-2));
-}
-
-.register-sec main {
-  width: 100%;
-  max-width: 1050px;
-}
-
-/* ----- Card: image on the left, form on the right ----- */
-.register-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: stretch;
-  overflow: hidden;
-  border-radius: 24px;
-}
-
-/* ----- Left: brand panel ----- */
-.left-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(24px, 4vw, 48px);
-  background: linear-gradient(160deg, #eaf1ff 0%, #dbe8ff 100%);
-}
-
-.left-image img {
-  width: 100%;
-  max-width: 380px;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 16px 24px rgba(37, 99, 235, 0.2));
-}
-
-/* ----- Right: form ----- */
-.right-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: clamp(28px, 5vw, 56px);
-}
-
-.right-form h1 {
-  margin: 0 0 6px;
-  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--r-text);
-}
-
-.right-form h1::after {
-  content: "Create your account to get started";
-  display: block;
-  margin-top: 8px;
-  font-size: 0.95rem;
-  font-weight: 400;
-  letter-spacing: 0;
-  color: var(--r-muted);
-}
-
-.right-form .form {
-  margin-top: 28px;
-}
-
-.right-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
-
-.form-group label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--r-text);
-}
-
-.form-group input {
-  width: 100%;
-  padding: 13px 16px;
-  font-family: inherit;
-  font-size: 0.95rem;
-  color: var(--r-text);
-  background: #f8fafc;
-  border: 1.5px solid var(--r-border);
-  border-radius: 12px;
-  box-sizing: border-box;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease,
-    background-color 0.2s ease;
-}
-
-.form-group input::placeholder {
-  color: #94a3b8;
-}
-
-.form-group input:hover {
-  border-color: #b8c4d6;
-}
-
-.form-group input:focus {
-  outline: none;
-  background: #fff;
-  border-color: var(--r-accent);
-  box-shadow: 0 0 0 4px var(--r-accent-soft);
-}
-
-/* Show red only after the user has typed something invalid */
-.form-group input:not(:placeholder-shown):invalid {
-  border-color: #ef4444;
-  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12);
-}
-
-/* ----- Submit button ----- */
-.right-form .btn {
-  margin-top: 8px;
-}
-
-.right-form .btn button {
-  width: 100%;
-  padding: 14px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: #fff;
-  background: linear-gradient(135deg, var(--r-accent), var(--r-accent-dark));
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-}
-
-.right-form .btn button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.38);
-  filter: brightness(1.05);
-}
-
-.right-form .btn button:active {
-  transform: translateY(0);
-  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
-}
-
-.right-form .btn button:focus-visible {
-  outline: 3px solid var(--r-accent-soft);
-  outline-offset: 3px;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 860px) {
-  .register-container {
-    grid-template-columns: 1fr;
-  }
-
-  .left-image {
-    padding: 28px 24px 12px;
-  }
-
-  .left-image img {
-    max-width: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .register-container {
-    border-radius: 18px;
-  }
-
-  .right-form {
-    padding: 24px 20px 28px;
-  }
-}
-
 /* ===== About page ===== */
 .about-sec {
   --a-bg-1: #eef4ff;
@@ -777,5 +578,262 @@ main {
 
   .btn-about a {
     width: 100%;
+  }
+}
+/* ===== Auth pages (Register + Login) ===== */
+
+/* Variables live on :root so they always exist */
+:root {
+  --auth-bg-1: #eef4ff;
+  --auth-bg-2: #f8fafc;
+  --auth-card: #ffffff;
+  --auth-text: #0f172a;
+  --auth-muted: #64748b;
+  --auth-border: #dbe3ee;
+  --auth-field: #f8fafc;
+  --auth-accent: #2563eb;
+  --auth-accent-dark: #1d4ed8;
+  --auth-accent-soft: rgba(37, 99, 235, 0.16);
+  --auth-error: #ef4444;
+}
+
+/* ----- Page background (any <section> that holds the auth form) ----- */
+section:has(.right-form) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 72px); /* viewport minus navbar */
+  padding: clamp(24px, 5vw, 64px) clamp(16px, 4vw, 48px);
+  color-scheme: light; /* stops dark-mode defaults turning text white */
+  color: var(--auth-text);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.14), transparent 42%),
+    radial-gradient(circle at 85% 80%, rgba(14, 165, 233, 0.14), transparent 42%),
+    linear-gradient(135deg, var(--auth-bg-1), var(--auth-bg-2));
+}
+
+section:has(.right-form) > main {
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* ----- Card (matches your current typo class AND the corrected names) ----- */
+section:has(.right-form) .containter,
+section:has(.right-form) .register-container,
+section:has(.right-form) .login-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  overflow: hidden;
+  background: var(--auth-card);
+  border-radius: 24px;
+  box-shadow:
+    0 4px 6px rgba(15, 23, 42, 0.04),
+    0 28px 64px rgba(15, 23, 42, 0.14);
+}
+
+/* ----- Left: illustration panel ----- */
+section:has(.right-form) .left-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 4vw, 48px);
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.7), transparent 55%),
+    linear-gradient(160deg, #e3edff 0%, #cfe0ff 100%);
+}
+
+section:has(.right-form) .left-image img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 28px rgba(37, 99, 235, 0.25));
+}
+
+/* ----- Right: form ----- */
+section:has(.right-form) .right-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 5vw, 56px);
+  background: var(--auth-card);
+}
+
+.right-form h1 {
+  margin: 0 0 6px;
+  font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--auth-text);
+}
+
+/* Subtitle: Login by default, Register when the form has a phone field */
+.right-form h1::after {
+  content: "Welcome back! Please sign in to continue";
+  display: block;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--auth-muted);
+}
+
+section:has(input[name="phone"]) .right-form h1::after {
+  content: "Create your account to get started";
+}
+
+.right-form .form {
+  margin-top: 28px;
+}
+
+.right-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.right-form .form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--auth-text);
+}
+
+.right-form .form-group input {
+  width: 100%;
+  padding: 13px 16px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--auth-text);
+  background-color: var(--auth-field);
+  border: 1.5px solid var(--auth-border);
+  border-radius: 12px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.right-form .form-group input::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+.right-form .form-group input:hover {
+  border-color: #b8c4d6;
+}
+
+.right-form .form-group input:focus {
+  outline: none;
+  background-color: #fff;
+  border-color: var(--auth-accent);
+  box-shadow: 0 0 0 4px var(--auth-accent-soft);
+}
+
+/* Red only after the user has typed something invalid */
+.right-form .form-group input:not(:placeholder-shown):invalid {
+  border-color: var(--auth-error);
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12);
+}
+
+/* Browser autofill used to paint fields yellow/white */
+.right-form .form-group input:-webkit-autofill,
+.right-form .form-group input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--auth-text);
+  -webkit-box-shadow: 0 0 0 1000px var(--auth-field) inset;
+  caret-color: var(--auth-text);
+}
+
+/* ----- Submit button ----- */
+.right-form .btn {
+  margin-top: 6px;
+}
+
+.right-form .btn button {
+  width: 100%;
+  padding: 14px 24px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  background-color: var(--auth-accent); /* solid fallback */
+  background-image: linear-gradient(
+    135deg,
+    var(--auth-accent),
+    var(--auth-accent-dark)
+  );
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.32);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.right-form .btn button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.4);
+  filter: brightness(1.06);
+}
+
+.right-form .btn button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+}
+
+.right-form .btn button:focus-visible {
+  outline: 3px solid var(--auth-accent-soft);
+  outline-offset: 3px;
+}
+
+/* ----- Optional link under the button ----- */
+.right-form .switch-auth {
+  margin: 22px 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--auth-muted);
+}
+
+.right-form .switch-auth a {
+  font-weight: 600;
+  color: var(--auth-accent);
+  text-decoration: none;
+}
+
+.right-form .switch-auth a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 860px) {
+  section:has(.right-form) .containter,
+  section:has(.right-form) .register-container,
+  section:has(.right-form) .login-container {
+    grid-template-columns: 1fr;
+  }
+
+  section:has(.right-form) .left-image {
+    padding: 28px 24px 12px;
+  }
+
+  section:has(.right-form) .left-image img {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  section:has(.right-form) .containter,
+  section:has(.right-form) .register-container,
+  section:has(.right-form) .login-container {
+    border-radius: 18px;
+  }
+
+  section:has(.right-form) .right-form {
+    padding: 24px 20px 28px;
   }
 }

@@ -14,10 +14,29 @@ const Register = () => {
 
     setUser({ ...user, [name]: value });
     };
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
       e.preventDefault();
       console.log(user);
+
+      try{
+      const response=await fetch("http://localhost:5000/api/auth/register", 
+        {
+          method: "POST",
+          header:{
+            "Content-Type": "application/json"
+          },
+          body:JSON.stringify(user)
+        }  
+      );
+      if(response.ok){
+       setUser({username: "", email: "", phone: "", password: ""});
+       alert("registration Successfully");
+      }
     }
+      catch(err){
+        console.log('register', err);
+    }
+  }
   return (
    <section>
     <main>
